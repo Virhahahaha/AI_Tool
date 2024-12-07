@@ -8,9 +8,9 @@ import streamlit as st
 
 openai.api_key = st.secrets['OPENAI_API_KEY']
 
-def google_news_results(target_company, num_results=10,result_urls=[]):
+def google_news_results(target_company, num_search,result_urls=[]):
     search_query = f"{target_company} news -site:{target_company}.com -site:instagram.com -site:reddit.com -site:facebook.com -site:twitter.com -site:linkedin.com -site:yelp.com -site:quora.com -site:wikipedia.org"
-    search_results = search(search_query, num_results=num_results)
+    search_results = search(search_query, num_results=num_search)
     for idx, result in enumerate(search_results, 1):
         if "pdf" not in result:
             result_urls.append(result)
