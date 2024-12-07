@@ -1,0 +1,6 @@
+firecrawl
+pandas
+numpy
+openai
+google
+streamlit
