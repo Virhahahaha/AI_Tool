@@ -6,6 +6,8 @@ from googlesearch import search
 import streamlit as st
 
 
+
+
 openai.api_key = st.secrets['OPENAI_API_KEY']
 
 def google_news_results(target_company, num_search,result_urls=[]):
