@@ -2,5 +2,5 @@ firecrawl
 pandas
 numpy
 openai
-google
+googlesearch
 streamlit
