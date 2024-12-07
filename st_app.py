@@ -85,7 +85,7 @@ if target_company:
     st.write(f"You entered: {target_company}")
     with st.spinner("Processing Google... Please wait!"):
         company_profile = chat_completion_request(company_profile_prompt(target_company))
-        top_results = google_news_results(target_company, num_results=3)
+        top_results = google_news_results(target_company, 3)
         articals_summary = []
         for urls in top_results:
             artical = firecrawl_scrape(urls)
