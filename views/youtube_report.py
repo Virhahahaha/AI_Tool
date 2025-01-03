@@ -671,11 +671,11 @@ Use the following goals as a guide for your analysis:
 
 st.title("Youtube Audience Insight Report")
 
-ytb_lululemon = f"lululemon.pdf"
-ytb_ouraring = f"oura.pdf"
-ytb_parachute = f"para.pdf"
-ytb_allbirds = f"allbirds.pdf"
-ytb_olipop = f"olipop.pdf"
+ytb_lululemon = f"https://github.com/Virhahahaha/AI_Tool/blob/main/sample_reports/youtube_lululemon.pdf"
+ytb_ouraring = f"https://github.com/Virhahahaha/AI_Tool/blob/main/sample_reports/youtube_oura.pdf"
+ytb_parachute = f"https://github.com/Virhahahaha/AI_Tool/blob/main/sample_reports/youtube_parachute.pdf"
+ytb_allbirds = f"https://github.com/Virhahahaha/AI_Tool/blob/main/sample_reports/youtube_allbirds.pdf"
+ytb_olipop = f"https://github.com/Virhahahaha/AI_Tool/blob/main/sample_reports/youtube_olipop.pdf"
 
 st.markdown(f"""
 ##### Welcome to the Youtube Audience Insight Report Generator!

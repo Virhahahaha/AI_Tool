@@ -335,11 +335,11 @@ sections_to_write = ["Business Profile",
 
 st.title("Due Diligence Report")
 
-dd_lululemon = f"lululemon.pdf"
-dd_ouraring = f"oura.pdf"
-dd_parachute = f"para.pdf"
-dd_allbirds = f"allbirds.pdf"
-dd_olipop = f"olipop.pdf"
+dd_lululemon = f"https://github.com/Virhahahaha/AI_Tool/blob/main/sample_reports/dd_lululemon.pdf"
+dd_ouraring = f"https://github.com/Virhahahaha/AI_Tool/blob/main/sample_reports/dd_oura.pdf"
+dd_parachute = f"https://github.com/Virhahahaha/AI_Tool/blob/main/sample_reports/dd_parachute.pdf"
+dd_allbirds = f"https://github.com/Virhahahaha/AI_Tool/blob/main/sample_reports/dd_allbirds.pdf"
+dd_olipop = f"https://github.com/Virhahahaha/AI_Tool/blob/main/sample_reports/dd_olipop.pdf"
 
 st.markdown(f"""
 ##### Welcome to the AI-Powered Due Dilligence Report Generator!
