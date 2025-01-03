@@ -29,4 +29,6 @@ st.subheader("Workflow Overview", anchor = False)
 
 st.image("./assets/Beya_AI_Demo.svg", width = 800)
 
-st.image("./assets/Beya_AI_Demo.svg", width = 800)
+st.write("\n")
+
+st.image("./assets/Beya_AI_Demo2.svg", width = 800)
