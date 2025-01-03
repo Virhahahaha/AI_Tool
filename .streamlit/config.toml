@@ -1,0 +1,5 @@
+[theme]
+hideStreamlitMark = true
+
+[client]
+toolbarMode = "minimal"
