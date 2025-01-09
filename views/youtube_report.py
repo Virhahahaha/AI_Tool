@@ -763,24 +763,29 @@ if target_company_input:
                     """,
             unsafe_allow_html=True
         )
-                
-        # GPT to generate competitor companies
-        competitor_company = simple_gpt_chat(get_competitor_prompt.format(target_company = target_company))
-        comp1,comp2= competitor_company.split(",")
         
-        # Get Competitor youtube video information
-        comp1_df = comp_master_youtube_query(comp1)
-        switch_youtube_api()
-        youtube = build("youtube", "v3", developerKey= youtube_API_KEY)
-        comp2_df = comp_master_youtube_query(comp2)
+        try:        
+            # GPT to generate competitor companies
+            competitor_company = simple_gpt_chat(get_competitor_prompt.format(target_company = target_company))
+            comp1,comp2= competitor_company.split(",")
+            
+            # Get Competitor youtube video information
+            comp1_df = comp_master_youtube_query(comp1)
+            switch_youtube_api()
+            youtube = build("youtube", "v3", developerKey= youtube_API_KEY)
+            comp2_df = comp_master_youtube_query(comp2)
+            
+            # Summarize the key video performance metrics for the target company and it's competitors
+            target_metrics = calculate_youtube_metrics(target_master_df, target_company, "Target Company")
+            comp1_metrics = calculate_youtube_metrics(comp1_df, comp1, "Competitor Company")
+            comp2_metrics = calculate_youtube_metrics(comp2_df, comp2, "Competitor Company")               
+            summary_df = pd.DataFrame([target_metrics, comp1_metrics, comp2_metrics])
+            summary_markdown = summary_df.to_markdown(index=False)
         
-        # Summarize the key video performance metrics for the target company and it's competitors
-        target_metrics = calculate_youtube_metrics(target_master_df, target_company, "Target Company")
-        comp1_metrics = calculate_youtube_metrics(comp1_df, comp1, "Competitor Company")
-        comp2_metrics = calculate_youtube_metrics(comp2_df, comp2, "Competitor Company")               
-        summary_df = pd.DataFrame([target_metrics, comp1_metrics, comp2_metrics])
-        summary_markdown = summary_df.to_markdown(index=False)
-        
+        except Exception as e:
+            st.warning("No competitor insights were found on YouTube. Please double-check the target company name for accuracy or consider exploring another company for analysis.")
+            sys.exit()
+            
         # GPT to generate competitor analysis insights based on the key video performance metrics
         competitor_insights = simple_gpt_chat(summary_insight_prompt.format(summary_markdown = summary_markdown,target_company = target_company ))
         
